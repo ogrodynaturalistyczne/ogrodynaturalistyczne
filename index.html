@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#b7ddf2">
+<meta name="description" content="Projektowanie ogrodów, realizacja nasadzeń i pielęgnacja zieleni. Tworzymy naturalne, harmonijne przestrzenie.">
+<title>Ogrody Naturalistyczne | Projektowanie i realizacja</title>
+
+<style>
+:root {
+  --blue: #b7ddf2;
+  --blue-light: #eaf5fb;
+  --navy: #263746;
+  --paper: #fbfcfd;
+  --muted: #637583;
+  --white: #ffffff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--navy);
+  background: var(--paper);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+header {
+  background: rgba(251,252,253,.96);
+  border-bottom: 1px solid #e5edf2;
+}
+nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.logo {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+.logo span { display: block; font-size: 11px; letter-spacing: 3px; font-weight: 400; }
+.navlinks { display: flex; gap: 25px; font-size: 14px; }
+.navlinks a:hover { color: #5688a6; }
+.button {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 5px;
+  background: var(--blue);
+  color: var(--navy);
+  font-weight: 700;
+  border: 1px solid transparent;
+  transition: .2s;
+}
+.button:hover { background: #a3d0eb; }
+.button-outline { background: transparent; border-color: #9db4c3; }
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(18,35,44,.72), rgba(18,35,44,.12)),
+    url("https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=2000&q=85")
+    center 55% / cover;
+  color: white;
+}
+.hero-content { max-width: 680px; padding: 90px 0; }
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--blue);
+}
+h1 { font-size: clamp(42px, 6vw, 72px); line-height: 1.08; margin: 18px 0; letter-spacing: -2px; }
+.hero p { max-width: 560px; font-size: 18px; margin-bottom: 30px; }
+.hero .button-outline { color: white; border-color: white; margin-left: 8px; }
+section { padding: 85px 0; }
+.section-heading { max-width: 680px; margin-bottom: 38px; }
+h2 { font-size: clamp(30px, 4vw, 43px); line-height: 1.2; margin: 10px 0 18px; letter-spacing: -.8px; }
+.section-heading p, .intro-text { color: var(--muted); }
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.service {
+  background: white;
+  border: 1px solid #e4edf2;
+  border-radius: 8px;
+  padding: 30px;
+}
+.service-number { color: #6b9bb8; font-size: 13px; letter-spacing: 2px; }
+.service h3 { font-size: 21px; margin: 12px 0; }
+.service p { color: var(--muted); font-size: 15px; }
+.about {
+  background: var(--blue-light);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+.about-image {
+  width: 100%;
+  min-height: 390px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.points { padding: 0; list-style: none; }
+.points li { padding: 9px 0; }
+.points li::before { content: "✦"; color: #6898b4; margin-right: 12px; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 18px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.contact { background: #263746; color: white; }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.contact p { color: #d4e0e8; }
+.contact .button { margin-top: 12px; }
+.contact-note { font-size: 13px; color: #b9cbd6; }
+footer {
+  padding: 25px 0;
+  background: #1c2a35;
+  color: #d4e0e8;
+  font-size: 13px;
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+@media (max-width: 760px) {
+  nav { padding: 17px 0; align-items: flex-start; flex-direction: column; }
+  .navlinks { gap: 16px; flex-wrap: wrap; }
+  nav > .button { display: none; }
+  .hero { min-height: 520px; }
+  .hero-content { padding: 65px 0; }
+  .hero .button-outline { margin: 12px 0 0; }
+  .services, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+  section { padding: 60px 0; }
+  .about-image { min-height: 270px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-grid img:first-child { grid-column: 1 / -1; }
+  .gallery-grid img { height: 200px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">OGRODY NATURALISTYCZNE
+      <span>PROJEKTOWANIE · REALIZACJA</span>
+    </a>
+    <div class="navlinks">
+      <a href="#oferta">Oferta</a>
+      <a href="#onas">O podejściu</a>
+      <a href="#realizacje">Inspiracje</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <a class="button" href="#kontakt">Porozmawiajmy</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">Projektowanie i usługi ogrodnicze</div>
+        <h1>Ogrody bliskie naturze.</h1>
+        <p>Tworzymy zielone przestrzenie, w których rośliny, światło i naturalne materiały budują harmonijną całość.</p>
+        <a class="button" href="#oferta">Poznaj ofertę</a>
+        <a class="button button-outline" href="#kontakt">Skontaktuj się</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="oferta">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Co możemy zrobić?</div>
+        <h2>Od pierwszego pomysłu do zielonego ogrodu.</h2>
+        <p>Dobieramy rozwiązania do miejsca, potrzeb użytkowników i warunków siedliskowych.</p>
+      </div>
+      <div class="services">
+        <article class="service">
+          <div class="service-number">01 / PROJEKT</div>
+          <h3>Projektowanie ogrodów</h3>
+          <p>Przemyślane układy przestrzenne, dobór roślin i kompozycje dopasowane do charakteru działki.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">02 / REALIZACJA</div>
+          <h3>Zakładanie ogrodów</h3>
+          <p>Nasadzenia drzew, krzewów, bylin i traw ozdobnych oraz zakładanie rabat i zielonych przestrzeni.</p>
+        </article>
+        <article class="service">
+          <div class="service-number">03 / OPIEKA</div>
+          <h3>Pielęgnacja zieleni</h3>
+          <p>Prace pielęgnacyjne, porządkowanie nasadzeń i wsparcie w utrzymaniu ogrodu w dobrej kondycji.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="onas">
+    <div class="container about-grid">
+      <div>
+        <div class="eyebrow">Nasze podejście</div>
+        <h2>Piękno, które wynika z natury.</h2>
+        <p class="intro-text">W ogrodzie liczy się coś więcej niż wygląd. Ważne są proporcje, sezonowość, odpowiedni dobór gatunków i to, jak przestrzeń zmienia się w ciągu roku.</p>
+        <ul class="points">
+          <li>Rośliny dobrane do warunków miejsca</li>
+          <li>Byliny i trawy ozdobne o wielu walorach</li>
+          <li>Kompozycje atrakcyjne przez kolejne sezony</li>
+          <li>Rozwiązania dopasowane do potrzeb właścicieli</li>
+        </ul>
+      </div>
+      <img class="about-image"
+        src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1000&q=85"
+        alt="Rośliny i prace w ogrodzie" loading="lazy">
+    </div>
+  </section>
+
+  <section id="realizacje">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Zielone inspiracje</div>
+        <h2>Ogród zmienia się z każdym sezonem.</h2>
+        <p>To przykładowe zdjęcia. Docelowo zastąpimy je fotografiami Twoich projektów i realizacji.</p>
+      </div>
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=900&q=85" alt="Zieleń i rośliny" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&w=700&q=85" alt="Rośliny w ogrodzie" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=700&q=85" alt="Przestrzeń ogrodowa" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontakt">
+    <div class="container contact-grid">
+      <div>
+        <div class="eyebrow">Kontakt</div>
+        <h2>Porozmawiajmy o Twoim ogrodzie.</h2>
+        <p>Opowiedz nam o swojej przestrzeni i planach. Wspólnie zastanowimy się nad najlepszym rozwiązaniem.</p>
+      </div>
+      <div>
+        <p><strong>Obszar działania</strong><br>Poznań i okolice — do potwierdzenia</p>
+        <p><strong>E-mail</strong><br>WSTAW_TUTAJ_SWÓJ_EMAIL</p>
+        <p><strong>Telefon</strong><br>WSTAW_TUTAJ_NUMER_TELEFONU</p>
+        <a class="button" href="mailto:WSTAW_TUTAJ_SWÓJ_EMAIL">Napisz wiadomość</a>
+        <p class="contact-note">Przed publikacją uzupełnij dane kontaktowe i potwierdź obszar działania.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> Ogrody Naturalistyczne</span>
+    <span>Projektowanie i usługi ogrodnicze</span>
+  </div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
